@@ -16,7 +16,7 @@ namespace ImportDataInParisCube
             //helper.ReadTrees("les-arbres.csv");
             //helper.ReadCinemas("cinemas-a-paris.csv");
             helper.ReadHotSpot("liste_des_sites_des_hotspots_paris_wifi.csv");
-            helper.ReadSubways("liste_des_sites_des_hotspots_paris_wifi.csv");
+            helper.ReadSubways("positions-geographiques-des-stations-du-reseau-ratp.csv");
         }
     }
 }

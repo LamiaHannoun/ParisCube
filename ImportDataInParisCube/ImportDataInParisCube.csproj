@@ -73,6 +73,7 @@
     </None>
     <None Include="liste_des_sites_des_hotspots_paris_wifi.csv" />
     <None Include="packages.config" />
+    <None Include="positions-geographiques-des-stations-du-reseau-ratp.csv" />
     <None Include="stations-velib-disponibilites-en-temps-reel.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
