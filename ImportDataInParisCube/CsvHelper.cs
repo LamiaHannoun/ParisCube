@@ -81,7 +81,7 @@ namespace ImportDataInParisCube
     {
         public double Longitude { get; set; }
         public double Latitude { get; set; }
-        public double Numbers { get; set; }
+        public int Numbers { get; set; }
         public string Name { get; set; }
         public ServiceType ServiceType { get; set; }
     }
@@ -90,7 +90,7 @@ namespace ImportDataInParisCube
     {
         public int LongitudeIndex { get; set; }
         public int LatitudeIndex { get; set; }
-        public ServiceType ServiceType { get; set; }
+        public int Count { get; set; }
     }
 
     public enum ServiceType
