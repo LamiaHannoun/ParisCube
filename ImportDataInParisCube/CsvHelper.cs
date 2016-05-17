@@ -52,7 +52,37 @@ namespace ImportDataInParisCube
             {
                 if (i > 0)
                 {
-                    var position = line[7];
+                    if (line.Length > 6 && !string.IsNullOrWhiteSpace(line[7]))
+                    {
+                        var position = line[7];
+                        var test = position.Split(',');
+                        var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
+                        var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
+                        var zone = new ZoneTemp()
+                        {
+                            Latitude = latitude,
+                            Longitude = longitude,
+                            Name = line[1],
+                            ServiceType = ServiceType.CoffeeShops
+                        };
+                        zones.Add(zone);
+                    }
+                }
+                i++;
+            }
+            _dataRepository.ImportData(zones);
+        }
+
+        public void ReadTrees(string path)
+        {
+            var lines = File.ReadAllLines(path).Select(a => a.Split(';'));
+            var zones = new List<ZoneTemp>();
+            int i = 0;
+            foreach (var line in lines)
+            {
+                if (i > 0)
+                {
+                    var position = line[0];
                     var test = position.Split(',');
                     var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
                     var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
@@ -60,8 +90,7 @@ namespace ImportDataInParisCube
                     {
                         Latitude = latitude,
                         Longitude = longitude,
-                        Name = line[1],
-                        ServiceType = ServiceType.CoffeeShops
+                        ServiceType = ServiceType.Trees
                     };
                     zones.Add(zone);
                 }
@@ -69,19 +98,45 @@ namespace ImportDataInParisCube
             }
             _dataRepository.ImportData(zones);
         }
-
-        public void ReadSubwayStations(string path)
+        public void ReadCinemas(string path)
         {
-
+            var lines = File.ReadAllLines(path).Select(a => a.Split(';'));
+            var zones = new List<ZoneTemp>();
+            int i = 0;
+            foreach (var line in lines)
+            {
+                if (i > 0)
+                {
+                    if (!string.IsNullOrWhiteSpace(line[7]) && !string.IsNullOrWhiteSpace(line[3])
+                        && !string.IsNullOrWhiteSpace(line[1]))
+                    {
+                        var test = line[7].Split(',');
+                        var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
+                        var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
+                        var zone = new ZoneTemp()
+                        {
+                            Latitude = latitude,
+                            Longitude = longitude,
+                            Name = line[1],
+                            ServiceType = ServiceType.Cinemas
+                        };
+                        zones.Add(zone);
+                    }
+                }
+                i++;
+            }
+            _dataRepository.ImportData(zones);
         }
+
     }
+
 
 
     public class ZoneTemp
     {
         public double Longitude { get; set; }
         public double Latitude { get; set; }
-        public int Numbers { get; set; }
+        public double Numbers { get; set; }
         public string Name { get; set; }
         public ServiceType ServiceType { get; set; }
     }
@@ -90,7 +145,7 @@ namespace ImportDataInParisCube
     {
         public int LongitudeIndex { get; set; }
         public int LatitudeIndex { get; set; }
-        public int Count { get; set; }
+        public ServiceType ServiceType { get; set; }
     }
 
     public enum ServiceType
@@ -99,6 +154,6 @@ namespace ImportDataInParisCube
         CoffeeShops,
         Restaurant,
         Trees,
-        Subway
+        Cinemas
     }
 }
