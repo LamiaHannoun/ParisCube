@@ -90,13 +90,13 @@ namespace ImportDataInParisCube
                     {
                         Latitude = latitude,
                         Longitude = longitude,
-                        ServiceType = ServiceType.Trees
+                        
                     };
                     zones.Add(zone);
                 }
                 i++;
             }
-            _dataRepository.ImportData(zones);
+            _dataRepository.ImportData(ServiceType.Trees,zones);
         }
         public void ReadCinemas(string path)
         {
@@ -117,15 +117,14 @@ namespace ImportDataInParisCube
         {
                             Latitude = latitude,
                             Longitude = longitude,
-                            Name = line[1],
-                            ServiceType = ServiceType.Cinemas
+                            Name = line[1]
                         };
                         zones.Add(zone);
                     }
                 }
                 i++;
             }
-            _dataRepository.ImportData(zones);
+            _dataRepository.ImportData(ServiceType.Cinemas,zones);
         }
 
         }
