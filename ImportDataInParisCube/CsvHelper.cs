@@ -63,6 +63,7 @@ namespace ImportDataInParisCube
                         Latitude = latitude,
                         Longitude = longitude,
                         Name = line[1],
+                        Numbers = 1
 
                     };
                     zones.Add(zone);
@@ -90,7 +91,7 @@ namespace ImportDataInParisCube
                     {
                         Latitude = latitude,
                         Longitude = longitude,
-                        
+                        Numbers = 1
                     };
                     zones.Add(zone);
                 }
@@ -117,7 +118,8 @@ namespace ImportDataInParisCube
         {
                             Latitude = latitude,
                             Longitude = longitude,
-                            Name = line[1]
+                            Name = line[1],
+                            Numbers = 1
                         };
                         zones.Add(zone);
                     }
@@ -127,7 +129,64 @@ namespace ImportDataInParisCube
             _dataRepository.ImportData(ServiceType.Cinemas,zones);
         }
 
+        public void ReadHotSpot(string path)
+        {
+            var lines = File.ReadAllLines(path).Select(a => a.Split(';'));
+            var zones = new List<ZoneTemp>();
+            int i = 0;
+            foreach (var line in lines)
+            {
+                if (i > 0)
+                {
+                    if (!string.IsNullOrWhiteSpace(line[6]) && !string.IsNullOrWhiteSpace(line[1]))
+                    {
+                        var test = line[6].Split(',');
+                        var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
+                        var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
+                        var zone = new ZoneTemp()
+                        {
+                            Latitude = latitude,
+                            Longitude = longitude,
+                            Name = line[1],
+                            Numbers = 1
+                        };
+                        zones.Add(zone);
+                    }
+                }
+                i++;
+            }
+            _dataRepository.ImportData(ServiceType.HotSpot, zones);
         }
+        public void ReadSubways(string path)
+        {
+            var lines = File.ReadAllLines(path).Select(a => a.Split(';'));
+            var zones = new List<ZoneTemp>();
+            int i = 0;
+            foreach (var line in lines)
+            {
+                if (i > 0)
+                {
+                    if (!string.IsNullOrWhiteSpace(line[6]) && !string.IsNullOrWhiteSpace(line[1]))
+                    {
+                        var test = line[6].Split(',');
+                        var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
+                        var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
+                        var zone = new ZoneTemp()
+                        {
+                            Latitude = latitude,
+                            Longitude = longitude,
+                            Name = line[1],
+                            Numbers = 1
+                        };
+                        zones.Add(zone);
+                    }
+                }
+                i++;
+            }
+            _dataRepository.ImportData(ServiceType.Subway, zones);
+        }
+    
+}
 
 
 
@@ -148,6 +207,8 @@ namespace ImportDataInParisCube
         CoffeeShops,
         Restaurant,
         Trees,
-        Cinemas
+        Cinemas,
+        HotSpot,
+        Subway,
     }
 }

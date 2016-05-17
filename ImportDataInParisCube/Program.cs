@@ -11,10 +11,12 @@ namespace ImportDataInParisCube
         static void Main(string[] args)
         {
             CsvHelper helper = new CsvHelper();
-            helper.ReadVelibData("stations-velib-disponibilites-en-temps-reel.csv");
-            helper.ReadCoffeShops("liste-des-cafes-a-un-euro.csv");
-            helper.ReadTrees("les-arbres.csv");
-            helper.ReadCinemas("cinemas-a-paris.csv");
+            //helper.ReadVelibData("stations-velib-disponibilites-en-temps-reel.csv");
+            //helper.ReadCoffeShops("liste-des-cafes-a-un-euro.csv");
+            //helper.ReadTrees("les-arbres.csv");
+            //helper.ReadCinemas("cinemas-a-paris.csv");
+            helper.ReadHotSpot("liste_des_sites_des_hotspots_paris_wifi.csv");
+            helper.ReadSubways("liste_des_sites_des_hotspots_paris_wifi.csv");
         }
     }
 }
