@@ -53,7 +53,7 @@ namespace ImportDataInParisCube
                     {
                         LongitudeIndex = gp.Key.Item1,
                         LatitudeIndex = gp.Key.Item2,
-                        Count = gp.Sum((_ => _.Numbers))
+                        Count = (int)gp.Sum((_ => _.Numbers))
                     };
 
 
@@ -91,8 +91,9 @@ namespace ImportDataInParisCube
                     case ServiceType.Restaurant:
                         break;
                     case ServiceType.Trees:
+                        dbData.TreeCount = dataToImport.Count;
                         break;
-                    case ServiceType.Subway:
+                    case ServiceType.Cinemas:
                         break;
                     default:
                         continue;
