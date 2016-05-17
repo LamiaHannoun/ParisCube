@@ -1,9 +1,0 @@
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\bin\Debug\ImportDataInParisCube.exe.config
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\bin\Debug\ImportDataInParisCube.exe
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\bin\Debug\ImportDataInParisCube.pdb
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\obj\Debug\ImportDataInParisCube.csprojResolveAssemblyReference.cache
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\obj\Debug\ImportDataInParisCube.exe
-c:\users\lamia\documents\visual studio 2015\Projects\ImportDataInParisCube\ImportDataInParisCube\obj\Debug\ImportDataInParisCube.pdb
-C:\Users\lamia\Source\Repos\Hackathon\ImportDataInParisCube\bin\Debug\ImportDataInParisCube.exe.config
-C:\Users\lamia\Source\Repos\Hackathon\ImportDataInParisCube\obj\Debug\ImportDataInParisCube.exe
-C:\Users\lamia\Source\Repos\Hackathon\ImportDataInParisCube\obj\Debug\ImportDataInParisCube.pdb
