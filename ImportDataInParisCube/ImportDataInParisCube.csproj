@@ -71,6 +71,7 @@
     <None Include="liste-des-cafes-a-un-euro.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="liste_des_sites_des_hotspots_paris_wifi.csv" />
     <None Include="packages.config" />
     <None Include="stations-velib-disponibilites-en-temps-reel.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
