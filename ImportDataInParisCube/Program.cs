@@ -12,6 +12,7 @@ namespace ImportDataInParisCube
         {
             CsvHelper helper = new CsvHelper();
             helper.ReadVelibData("stations-velib-disponibilites-en-temps-reel.csv");
+            helper.ReadCoffeShops("liste-des-cafes-a-un-euro.csv");
         }
     }
 }
