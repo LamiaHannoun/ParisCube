@@ -63,6 +63,7 @@ namespace ImportDataInParisCube
                         Latitude = latitude,
                         Longitude = longitude,
                         Name = line[1],
+                        Numbers = 1,
 
                     };
                     zones.Add(zone);
@@ -90,7 +91,8 @@ namespace ImportDataInParisCube
                     {
                         Latitude = latitude,
                         Longitude = longitude,
-                        
+                        Numbers = 1,
+
                     };
                     zones.Add(zone);
                 }
@@ -117,6 +119,7 @@ namespace ImportDataInParisCube
         {
                             Latitude = latitude,
                             Longitude = longitude,
+                            Numbers = 1,
                             Name = line[1]
                         };
                         zones.Add(zone);

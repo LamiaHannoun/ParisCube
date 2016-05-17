@@ -88,12 +88,11 @@ namespace ImportDataInParisCube
                     case ServiceType.CoffeeShops:
                         dbData.CoffeeShops = dataToImport.Count;
                         break;
-                    case ServiceType.Restaurant:
-                        break;
                     case ServiceType.Trees:
                         dbData.TreeCount = dataToImport.Count;
                         break;
                     case ServiceType.Cinemas:
+                        dbData.CinemaCount = dataToImport.Count;
                         break;
                     default:
                         continue;
@@ -107,7 +106,7 @@ namespace ImportDataInParisCube
                 }
                 catch (Exception)
                 {
-
+                   
 
                 }
 
