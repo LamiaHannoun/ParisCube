@@ -166,9 +166,9 @@ namespace ImportDataInParisCube
             {
                 if (i > 0)
                 {
-                    if (!string.IsNullOrWhiteSpace(line[6]) && !string.IsNullOrWhiteSpace(line[1]))
+                    if (!string.IsNullOrWhiteSpace(line[3]) && !string.IsNullOrWhiteSpace(line[1]))
                     {
-                        var test = line[6].Split(',');
+                        var test = line[3].Split(',');
                         var latitude = double.Parse(test[0], CultureInfo.InvariantCulture);
                         var longitude = double.Parse(test[1], CultureInfo.InvariantCulture);
                         var zone = new ZoneTemp()
