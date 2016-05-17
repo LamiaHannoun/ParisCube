@@ -34,13 +34,13 @@ namespace ImportDataInParisCube
                         Latitude = latitude,
                         Longitude = longitude,
                         Numbers = int.Parse(line[8]),
-                        ServiceType = ServiceType.Velib
+                       
                     };
                     zones.Add(zone);
                 }
                 i++;
             }
-            _dataRepository.ImportData(zones);
+            _dataRepository.ImportData(ServiceType.Velib, zones);
         }
 
         public void ReadCoffeShops(string path)
@@ -61,13 +61,13 @@ namespace ImportDataInParisCube
                         Latitude = latitude,
                         Longitude = longitude,
                         Name = line[1],
-                        ServiceType = ServiceType.CoffeeShops
+
                     };
                     zones.Add(zone);
                 }
                 i++;
             }
-            _dataRepository.ImportData(zones);
+            _dataRepository.ImportData(ServiceType.CoffeeShops,zones);
         }
 
         public void ReadSubwayStations(string path)
@@ -83,15 +83,10 @@ namespace ImportDataInParisCube
         public double Latitude { get; set; }
         public int Numbers { get; set; }
         public string Name { get; set; }
-        public ServiceType ServiceType { get; set; }
+      
     }
 
-    public class ZoneData
-    {
-        public int LongitudeIndex { get; set; }
-        public int LatitudeIndex { get; set; }
-        public int Count { get; set; }
-    }
+
 
     public enum ServiceType
     {
