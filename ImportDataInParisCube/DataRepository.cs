@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Configuration;
 
 namespace ImportDataInParisCube
@@ -11,16 +12,9 @@ namespace ImportDataInParisCube
             this.connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
         }
 
-        public void ImportData()
+        public void ImportData(IEnumerable<ZoneTemp> zones)
         {
-            var connectionString = string.Empty;
-            var commandText = string.Empty;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(commandText, connection);
-                command.ExecuteNonQuery();
-            }
+           
         }
     }
 }
